@@ -1,12 +1,12 @@
 # Ideoita!
 
-* Jonkinnäköinen ajastin
+* [_] Jonkinnäköinen ajastin
   * Useampi countdown, vuorottelu?
   * Ajastuksen keskeytys (-> shakkikello)
-* Todo-lista
-* Koodaajien Tinder! :D
-* Näytetään tulevat tapahtumat Google Calendarista
+* [_] Todo-lista
+* [_] Koodaajien Tinder! :D
+* [_] Näytetään tulevat tapahtumat Google Calendarista
   * (Bilecountdown? :P)
-* Kielitreeniohjelma
-* Jotain Google Maps -integraatiolla?
-* Jotain kissakuviin liittyvää (tämä on tärkeää)
+* [_] Kielitreeniohjelma
+* [_] Jotain Google Maps -integraatiolla?
+* [x] Jotain kissakuviin liittyvää (tämä on tärkeää)
