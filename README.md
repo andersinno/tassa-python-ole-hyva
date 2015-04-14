@@ -2,6 +2,11 @@
 
 Anders Innovationsin Python for Beginners -kurssin (31.3.2015-) materiaalit.
 
+## Yhteystiedot
+
+* Aarni Koskela -- aarni@anders.fi -- Twitter/Github: @akx
+* Janne Tammi -- janne@anders.fi -- Github: @Pikkupomo
+
 ## Pythonin asennus
 
 ### Windows
