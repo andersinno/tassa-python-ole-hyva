@@ -12,7 +12,11 @@ class LivingThing(object):
 
 
 class Plant(LivingThing):
-    pass
+    def __init__(self):
+        self.__super_secret = "tutturuu"
+
+    def tell_me_your_secret(self):
+        return self.__super_secret
 
 
 class Animal(NoisyThing, LivingThing):
