@@ -111,4 +111,3 @@ class MainWindow(object):
         """
         self.wrap_tick()  # Prime the timer!
         self.frame.mainloop()
-        self.frame.destroy()
