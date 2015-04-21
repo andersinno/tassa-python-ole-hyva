@@ -8,3 +8,9 @@ class Timer:
 
     def get_time_left(self):
         return max(self.total_time - self.elapsed_time, 0)
+
+    def tick(self, seconds=1):
+        self.elapsed_time += seconds
+
+    def reset(self):
+        self.elapsed_time = 0
