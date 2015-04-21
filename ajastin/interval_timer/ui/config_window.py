@@ -6,7 +6,8 @@ from interval_timer.timer_list import TimerList
 
 try:
     import tkinter.messagebox as mb
-except ImportError:  # Python 2.x?
+except ImportError:  # pragma: no cover
+    # Python 2.x?
     import tkMessageBox as mb
 
 class ConfigWindow(object):

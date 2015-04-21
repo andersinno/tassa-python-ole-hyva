@@ -1,16 +1,9 @@
 # -*- coding: utf-8 -*-
 
 import tkinter as tk
-
 from interval_timer.utils import play_sound_by_name
 
-
 TIMER_SPEED = 1000
-
-try:
-    import tkinter.messagebox as mb
-except ImportError:  # Python 2.x?
-    import tkMessageBox as mb
 
 
 def gridify(widget, **grid_kwargs):
@@ -61,10 +54,15 @@ class MainWindow(object):
         self.timer_active = False
         self.create_ui()
         self.update_labels()
-        self.frame.after(TIMER_SPEED, self.tick)
+
+    def wrap_tick(self):  # pragma: no cover
+        # A wrapper method for `tick` so it's easier to test.
+        # This method is simple enough that it doesn't necessarily
+        # need to be test-covered.
+        self.tick()
+        self.frame.after(TIMER_SPEED, self.wrap_tick)
 
     def tick(self):
-        self.frame.after(TIMER_SPEED, self.tick)
         if self.timer_active:
             current_timer = self.timer_list.get_current_timer()
             current_timer.tick()
@@ -105,10 +103,12 @@ class MainWindow(object):
         self.timer_list.reset()
         self.update_labels()
 
-    def open(self):
+    def open(self):  # pragma: no cover
         """
         Open the main window.
 
         This call will block until the user has finished with their interval training.
         """
+        self.wrap_tick()  # Prime the timer!
         self.frame.mainloop()
+        self.frame.destroy()
