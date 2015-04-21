@@ -1,8 +1,13 @@
 # -*- coding: utf-8 -*-
 
 import tkinter as tk
+from interval_timer.timer import Timer
 from interval_timer.timer_list import TimerList
 
+try:
+    import tkinter.messagebox as mb
+except ImportError:  # Python 2.x?
+    import tkMessageBox as mb
 
 class ConfigWindow(object):
     def __init__(self):
@@ -39,9 +44,21 @@ class ConfigWindow(object):
         """
         Read the configuration from the user's inputs, create a TimerList instance and close this window.
         """
-        # TODO: Make timers
+
+        timers = []
+
         for (name_entry, time_entry) in self.inputs:
-            raise NotImplementedError("Not implemented")
+            name = name_entry.get()
+            time_text = time_entry.get()
+            if not (name and time_text):
+                continue
+            seconds = int(time_text)
+            timers.append(Timer(name=name, total_time=seconds))
+        if not timers:
+            mb.showerror(message="No timers.")
+            return
+
+        self.timer_list = TimerList(timers)
         self.frame.quit()
 
     def get_timer_list(self):
