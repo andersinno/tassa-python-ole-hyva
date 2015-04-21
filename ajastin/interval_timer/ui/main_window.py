@@ -5,7 +5,7 @@ import tkinter as tk
 from interval_timer.utils import play_sound_by_name
 
 
-TIMER_SPEED = 100
+TIMER_SPEED = 1000
 
 try:
     import tkinter.messagebox as mb
