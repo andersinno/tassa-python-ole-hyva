@@ -59,6 +59,7 @@ class ConfigWindow(object):
             return
 
         self.timer_list = TimerList(timers)
+        self.frame.destroy()
         self.frame.quit()
 
     def get_timer_list(self):
