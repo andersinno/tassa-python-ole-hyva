@@ -71,3 +71,8 @@ class ConfigWindow(object):
         :rtype: TimerList
         """
         return self.timer_list
+
+    def initialize_from_timer_list(self, timer_list):
+        for i, timer in enumerate(timer_list.timers[:10]):
+            self.inputs[i][0].insert(0, timer.name)
+            self.inputs[i][1].insert(0, timer.total_time)

@@ -24,6 +24,8 @@
 * Käyttäjänä haluan, että viimeisen ajastimen päätyttyä
   * saan erilaisen huomautuksen
   * ajastus alkaa alusta ensimmäisestä ajastimesta
+* Käyttäjänä haluan, että ohjelman käynnistäessäni ajastimien aloitusluvut
+  ovat samat kuin viime kerralla ohjelmaa käytettyäni
 
 ## Tietorakenteet
 
