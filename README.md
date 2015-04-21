@@ -34,4 +34,11 @@ Asenna `python3`- tai `python`-paketti jakelun paketinhallinnasta, sekä
 * Suositus: JetBrains PyCharm https://www.jetbrains.com/pycharm/ (ilmainen
   Community-versio; Professional opiskelijoille ilmainen)
   
-  
+## Versionhallinta
+
+* Git: https://try.github.io/levels/1/challenges/1
+
+## Testaustyökaluja
+
+* `py.test` (`pip install pytest`)
+  * `pytest-cov`
