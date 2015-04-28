@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+import json
+from interval_timer.timer import Timer
+
 
 class TimerList:
     def __init__(self, timers=()):
@@ -19,3 +22,11 @@ class TimerList:
 
     def is_current_last_timer(self):
         return self.current_timer_index == len(self.timers) - 1
+
+    def to_json(self):
+        return json.dumps([t.to_json() for t in self.timers], ensure_ascii=False)
+
+    @classmethod
+    def from_json(cls, json_data):
+        timers = [Timer.from_json(datum) for datum in json_data]
+        return cls(timers=timers)

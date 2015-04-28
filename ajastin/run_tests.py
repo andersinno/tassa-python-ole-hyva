@@ -3,7 +3,7 @@
 import pytest
 
 pytest.main([
-    "-vvv",
+    "-vvvs",
     "--cov",
     ".",
     "--cov-report",
