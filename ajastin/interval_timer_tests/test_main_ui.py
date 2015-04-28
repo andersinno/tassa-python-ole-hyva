@@ -34,6 +34,7 @@ def test_main_window():
     assert mw.timer_list.get_current_timer() == first_timer
     mw.next_command()
     assert mw.timer_list.get_current_timer() != first_timer
+    assert mw.timer_list.is_current_last_timer()  # We're on the last timer, right?
     mw.reset_command()
     assert mw.timer_list.get_current_timer() == first_timer
 

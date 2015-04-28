@@ -16,7 +16,7 @@ def start_ui():
     timer_list = config_window.get_timer_list()
     if not timer_list.timers:
         return
-    
+
     try:
         save_default_timer_list(timer_list)
     except Exception as exc:

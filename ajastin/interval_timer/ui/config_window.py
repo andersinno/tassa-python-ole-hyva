@@ -41,13 +41,11 @@ class ConfigWindow(object):
         """
         self.frame.mainloop()
 
-    def make_timers_and_close(self):
+    def construct_timer_list(self):
         """
-        Read the configuration from the user's inputs, create a TimerList instance and close this window.
+        Read the configuration from the user's inputs and create a TimerList instance.
         """
-
         timers = []
-
         for (name_entry, time_entry) in self.inputs:
             name = name_entry.get()
             time_text = time_entry.get()
@@ -55,11 +53,22 @@ class ConfigWindow(object):
                 continue
             seconds = int(time_text)
             timers.append(Timer(name=name, total_time=seconds))
-        if not timers:
+        timer_list = TimerList(timers)
+        return timer_list
+
+    def make_timers_and_close(self):
+        """
+        Read the configuration from the user's inputs, create a TimerList instance and close this window.
+        """
+
+        timer_list = self.construct_timer_list()
+
+        if not timer_list.timers:
             mb.showerror(message="No timers.")
             return
 
-        self.timer_list = TimerList(timers)
+
+        self.timer_list = timer_list
         self.frame.destroy()
         self.frame.quit()
 

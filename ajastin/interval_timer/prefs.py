@@ -38,17 +38,17 @@ def get_config_filename(access_flag=None):
     :rtype: str|None
     """
     path = get_config_path()
-    if not path:
+    if not path:  # pragma: no cover
         return None
     filename = os.path.join(path, CONFIG_FILENAME)
     if access_flag and not os.access(filename, access_flag):
-        return None
+        return None  # pragma: no cover
     return filename
 
 
 def save_default_timer_list(timer_list):
     filename = get_config_filename(None)
-    if not filename:  # No valid filename?
+    if not filename:  # No valid filename? # pragma: no cover
         return False  # Aww.
     with open(filename, "wb") as file:
         file.write(timer_list.to_json().encode("utf-8"))

@@ -22,6 +22,9 @@ def test_save_load_config():
     original_config_filename = prefs.CONFIG_FILENAME
     try:
         prefs.CONFIG_FILENAME = test_config_filename
+        # We should not have anything in that random file...
+        assert not prefs.load_default_timer_list().timers
+        # But we can put something there!
         t = TimerList([
             Timer("Töttöröö", 10),
             Timer("Tetteree", 20),
@@ -34,3 +37,4 @@ def test_save_load_config():
         os.remove(prefs.get_config_filename())
     finally:
         prefs.CONFIG_FILENAME = original_config_filename
+
