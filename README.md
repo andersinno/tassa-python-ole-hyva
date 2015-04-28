@@ -42,3 +42,11 @@ Asenna `python3`- tai `python`-paketti jakelun paketinhallinnasta, sekä
 
 * `py.test` (`pip install pytest`)
   * `pytest-cov`
+
+## Muit jutui
+
+* BabelMap (http://www.babelstone.co.uk/Software/BabelMap.html)
+  * Unicode-kirjainkartta
+* The Absolute Minimum Every Software Developer Absolutely,
+  Positively Must Know About Unicode and Character Sets (No Excuses!)
+  * http://www.joelonsoftware.com/articles/Unicode.html
